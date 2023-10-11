@@ -6,6 +6,7 @@ Developing an AirBnB Clone Website in Python using the Flask Framework
   <img src="img/HBNB.png" alt="HolbertonBnB logo">
 </p>
 
+
 ## How it Works - Execution
 
 Interactive Mode 
@@ -46,6 +47,7 @@ EOF  help  quit
 (hbnb) 
 $
 ```
+
 ## Screenshots
 <p align="center">
   <img src="img/console.png" alt="HolbertonBnB logo">
