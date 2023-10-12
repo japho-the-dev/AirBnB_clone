@@ -48,7 +48,7 @@ EOF  help  quit
 $
 ```
 
-## Screenshots
+## Conceptual Framework
 <p align="center">
   <img src="img/console.png" alt="HolbertonBnB logo">
 </p>
