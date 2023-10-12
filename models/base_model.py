@@ -9,6 +9,7 @@ from models import storage
 
 class BaseModel:
     """the BaseModel to HBnB clone"""
+
     def __init__(self, *args, **kwargs):
         """Initializes instance attributes
         Args:
@@ -44,8 +45,8 @@ class BaseModel:
         """Returns the String Representation
         within the model
         """
-        clname = self.__class__.__name__
-        return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
+        class_name = self.__class__.__name__
+        return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
 
     def to_dict(self):
         """return key values"""
