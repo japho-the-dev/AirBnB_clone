@@ -9,19 +9,6 @@ from models import storage
 
 class BaseModel:
     """the BaseModel to HBnB clone"""
-
-    def save(self):
-        """method that updates the instance updated_at"""
-
-        self.updated_at = datetime.now()
-        
-    def __str__(self):
-        """Returns the String Representation
-        within the model
-        """
-        clname = self.__class__.__name__
-        return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
-    
     def __init__(self, *args, **kwargs):
         """Initializes instance attributes
         Args:
@@ -47,6 +34,18 @@ class BaseModel:
         self.id = str(uuid.uuid4()) 
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+
+    def save(self):
+        """method that updates the instance updated_at"""
+
+        self.updated_at = datetime.now()
+        
+    def __str__(self):
+        """Returns the String Representation
+        within the model
+        """
+        clname = self.__class__.__name__
+        return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
 
     def to_dict(self):
         """return key values"""
