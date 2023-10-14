@@ -2,7 +2,7 @@
 """serializes instances to a JSON file 
 and deserializes JSON file to instances
 """
-import os
+import os.path
 import json
 import datetime
 from models.base_model import BaseModel

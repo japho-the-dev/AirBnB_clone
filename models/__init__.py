@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""Model that defines the Storage component"""
+"""Initializes the storage module"""
 
 from models.engine.file_storage import FileStorage
-
 storage = FileStorage()
 storage.reload()
