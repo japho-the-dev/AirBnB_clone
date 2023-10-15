@@ -2,16 +2,8 @@
 """serializes instances to a JSON file 
 and deserializes JSON file to instances
 """
-import os.path
+import os
 import json
-import datetime
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.place import Place
-from models.amenity import Amenity
-from models.review import Review
 
 
 class FileStorage:
@@ -20,6 +12,15 @@ class FileStorage:
     __objects = {}
 
     def classes(self):
+
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.place import Place
+        from models.amenity import Amenity
+        from models.review import Review
+        
         classes = {"BaseModel": BaseModel,
                    "User": User,
                    "State": State,
