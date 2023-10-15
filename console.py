@@ -85,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
                 print(self.unknown_class)
             else:
                 c_id = self.extract_arg(cmds[1])
-                val = "{}.{}".format(cls_name, c_id)
+                val = "{}.{}".format(c_name, c_id)
 
                 if val in storage.all():
                     print(storage.all()[val])
@@ -108,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
             elif c_name not in storage.class_map():
                 print(self.unknown_class)
             else:
-                key = "{}.{}".format(cls_name, c_id)
+                key = "{}.{}".format(c_name, c_id)
 
                 if key in storage.all():
                     storage.all().pop(key)
@@ -125,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
             flags = args.split(" ")
             n_key = "{}.{}".format(self.extract_arg(flags[0]),
                                         self.extract_arg(flags[1]))
-            print(update_key)
+            print(n_key)
 
             if len(flags) < 2:
                 print(self.missing_id)
@@ -147,9 +147,9 @@ class HBNBCommand(cmd.Cmd):
         """Retuurnc count of attributes in a class.
         """
         characters = line.split(' ')
-        if not words[0]:
+        if not characters[0]:
             print("** class name missing **")
-        elif words[0] not in storage.classes():
+        elif characters[0] not in storage.classes():
             print("** class doesn't exist **")
         else:
             equiv = [
