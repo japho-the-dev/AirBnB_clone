@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
 
             c_name = self.extract_arg(commands[0])
             if c_name in storage.classes():
-                new_C= storage.class_map()[c_name]()
+                new_C= storage.classes()[c_name]()
                 new_C.save()
                 print(new_C.id)
             else:
@@ -105,7 +105,7 @@ class HBNBCommand(cmd.Cmd):
 
             if len(cmds) < 2:
                 print(self.missing_id)
-            elif c_name not in storage.class_map():
+            elif c_name not in storage.classes():
                 print(self.unknown_class)
             else:
                 key = "{}.{}".format(c_name, c_id)
@@ -135,7 +135,7 @@ class HBNBCommand(cmd.Cmd):
                 print(self.missing_attr)
             elif len(flags) < 4:
                 print(self.missing_val)
-            elif flags[0] not in storage.class_map():
+            elif flags[0] not in storage.classes():
                 print(self.unknown_class)
 
             for key, _ in storage.all().items():
