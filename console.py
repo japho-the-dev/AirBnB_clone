@@ -42,7 +42,7 @@ class HBNBCommand(cmd.Cmd):
             commands = args.split(" ")
 
             c_name = self.extract_arg(commands[0])
-            if c_name in storage.class_map():
+            if c_name in storage.classes():
                 new_C= storage.class_map()[c_name]()
                 new_C.save()
                 print(new_C.id)
@@ -60,7 +60,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             cmd = self.extract_arg(args.split(" ")[0])
 
-            if cmd not in storage.class_map():
+            if cmd not in storage.classes():
                 print(self.unknown_class)
             else:
                 in_list = []
@@ -81,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
 
             if len(cmds) < 2:
                 print(self.missing_id)
-            elif c_name not in storage.class_map():
+            elif c_name not in storage.classes():
                 print(self.unknown_class)
             else:
                 c_id = self.extract_arg(cmds[1])
